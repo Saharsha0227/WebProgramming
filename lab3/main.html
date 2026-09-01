@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cultural Festival Registration</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #7b1e7a;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #7b1e7a;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 7px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #7b1e7a;
+            box-shadow: 0 0 5px rgba(123, 30, 122, 0.4);
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .options label {
+            font-weight: normal;
+            background: #f7f5e6;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .options input {
+            margin-right: 6px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            flex: 1;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background-color: #7b1e7a;
+            color: white;
+        }
+
+        input[type="reset"] {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #5e155d;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #bbb;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Cultural Festival 2026 </h1>
+        <p class="subtitle">
+            Register now and showcase your talent!
+        </p>
+
+        <form>
+
+            <h2>Participant Details</h2>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="fullname"
+                       placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email"
+                       placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone"
+                       placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender</label>
+
+                <div class="options">
+                    <label>
+                        <input type="radio" name="gender" value="Male">
+                        Male
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="Female">
+                        Female
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="Other">
+                        Other
+                    </label>
+                </div>
+            </div>
+
+
+            <h2>Event Selection</h2>
+
+            <div class="form-group">
+                <label>Select the events you want to participate in</label>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox" name="events" value="Dance">
+                         Dance
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="events" value="Singing">
+                        Singing
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="events" value="Drama">
+                        Drama
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="events" value="Photography">
+                        Photography
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="events" value="Painting">
+                        Painting
+                    </label>
+                </div>
+            </div>
+
+
+            <h2>Institute Information</h2>
+
+            <div class="form-group">
+                <label>Select Your Institution</label>
+
+                <select name="institution" required>
+                    <option value="">-- Select Institution --</option>
+                    <option>Jain University</option>
+                    <option>Bangalore University</option>
+                    <option>Christ University</option>
+                    <option>VTU</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Address / Additional Information</label>
+
+                <textarea name="address"
+                          rows="5"
+                          placeholder="Enter your address or additional details"></textarea>
+            </div>
+
+
+            <div class="buttons">
+                <input type="submit" value="Register Now">
+                <input type="reset" value="Clear Form">
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
+```
