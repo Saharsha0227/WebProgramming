@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Requirement 1: Browser tab title -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAIN University – Kanakapura Campus</title>
+
+    <!-- Internal CSS inside <style> tag -->
+    <style>
+        /* ========================================================
+           GLOBAL RESET & BODY (Requirement 2: Background Image)
+           ======================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            
+            /* Lab Requirement 2: Campus photograph background properties */
+            background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ========================================================
+           TOP UTILITY BAR (Official Jain Website Style)
+           ======================================================== */
+        .top-utility-bar {
+            background-color: #0d3765;
+            color: #ffffff;
+            font-size: 13px;
+            padding: 8px 30px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .top-utility-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .top-utility-bar a:hover {
+            color: #ffb703;
+        }
+
+        .top-utility-bar .divider {
+            color: #4a77a9;
+        }
+
+        .apply-btn-top {
+            background-color: #ffb703;
+            color: #0d3765 !important;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 3px;
+            margin-left: 10px;
+        }
+
+        /* ========================================================
+           MAIN NAVIGATION BAR (Official Jain Website Style)
+           ======================================================== */
+        .main-navbar {
+            background-color: #ffffff;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 900;
+        }
+
+        /* Jain Logo representation */
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .jgi-badge {
+            background-color: #0b2f59;
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 18px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: -1px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .jain-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .jain-brand .title {
+            font-size: 26px;
+            font-weight: 900;
+            color: #0b2f59;
+            letter-spacing: 1.5px;
+            line-height: 1;
+        }
+
+        .jain-brand .subtitle {
+            font-size: 8.5px;
+            font-weight: bold;
+            color: #212121;
+            letter-spacing: 0.8px;
+            margin-top: 3px;
+            border-top: 2px solid #c91f28;
+            padding-top: 2px;
+        }
+
+        /* Navigation menu links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: #2b3a4a;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+
+        .nav-links li a:hover {
+            color: #0d5db8;
+        }
+
+        .nav-links li.active a {
+            color: #0d5db8;
+            font-weight: 800;
+            border-bottom: 2px solid #0d5db8;
+            padding-bottom: 4px;
+        }
+
+        .search-icon {
+            background-color: #0b2f59;
+            color: #ffffff;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /* ========================================================
+           SEMI-TRANSPARENT MAIN CONTENT BOX (CSS Design Requirement)
+           ======================================================== */
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px 110px 20px; /* Bottom space for sticky buttons & marquee */
+        }
+
+        .content-card {
+            background-color: rgba(255, 255, 255, 0.94);
+            border-radius: 12px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+            max-width: 820px;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            text-align: center;
+        }
+
+        /* Header banner inside card (matches official site blue accent) */
+        .card-header {
+            background: linear-gradient(135deg, #0d3765 0%, #15559a 100%);
+            color: #ffffff;
+            padding: 30px 25px;
+        }
+
+        /* Requirement 3: College Name and Address */
+        .college-title {
+            font-size: 30px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .college-address {
+            font-size: 15px;
+            color: #e0eaf6;
+            margin: 0;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        /* Card body content */
+        .card-body {
+            padding: 35px 40px;
+        }
+
+        /* Programs Banner matching official site text */
+        .programs-header {
+            margin-bottom: 25px;
+        }
+
+        .programs-tag {
+            color: #0d5db8;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .programs-description {
+            color: #555555;
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 680px;
+            margin: 0 auto 12px auto;
+        }
+
+        .breadcrumb {
+            font-size: 13px;
+            color: #0d5db8;
+            margin-bottom: 25px;
+        }
+
+        .breadcrumb span {
+            color: #888888;
+        }
+
+        .section-separator {
+            border: none;
+            height: 1px;
+            background: #e0e0e0;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        /* Requirement 4: Courses Offered List & Styles */
+        .courses-container {
+            margin-top: 10px;
+        }
+
+        .courses-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .course-item {
+            padding: 10px 18px;
+            border-radius: 6px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            font-size: 18px;
+        }
+
+        /* Individual Course Typography & Colors */
+        /* B.Tech – Blue, bold, Arial */
+        .course-btech {
+            color: blue;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+        }
+
+        /* BBA – Red, italic, Georgia */
+        .course-bba {
+            color: red;
+            font-style: italic;
+            font-family: Georgia, serif;
+        }
+
+        /* BCA – Green, bold, Verdana */
+        .course-bca {
+            color: green;
+            font-weight: bold;
+            font-family: Verdana, sans-serif;
+        }
+
+        /* MBA – Purple, italic, Times New Roman */
+        .course-mba {
+            color: purple;
+            font-style: italic;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* MCA – Orange, bold, Courier New */
+        .course-mca {
+            color: orange;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* B.Com – Dark Cyan, underlined, Tahoma */
+        .course-bcom {
+            color: darkcyan;
+            text-decoration: underline;
+            font-family: Tahoma, sans-serif;
+        }
+
+        /* ========================================================
+           BOTTOM ACTION BAR (Official Website Orange Buttons)
+           ======================================================== */
+        .bottom-action-bar {
+            position: fixed;
+            bottom: 34px; /* Sits right above marquee */
+            left: 0;
+            width: 100%;
+            background-color: #0d2f53;
+            padding: 8px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            z-index: 950;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.25);
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            background-color: #f37021; /* Official Jain orange */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 7px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid #d45b10;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .action-btn:hover {
+            background-color: #e05e10;
+            transform: translateY(-1px);
+        }
+
+        /* ========================================================
+           Requirement 5: SCROLLING ANNOUNCEMENT (Marquee at bottom)
+           ======================================================== */
+        .marquee-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffb703; /* Highlight gold banner */
+            color: #0b2f59;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 7px 0;
+            z-index: 1000;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        marquee {
+            display: block;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Top Utility Header Bar (matching official Jain portal) -->
+    <header class="top-utility-bar">
+        <span>AY 25-26</span>
+        <span class="divider">|</span>
+        <a href="#">International Admissions &#9662;</a>
+        <span class="divider">|</span>
+        <a href="#">Alumni</a>
+        <span class="divider">|</span>
+        <a href="#">Current Students</a>
+        <span class="divider">|</span>
+        <a href="#">Blog</a>
+        <a href="#" class="apply-btn-top">Apply Now</a>
+    </header>
+
+    <!-- 2. Main Navigation Bar with Logo and Menu -->
+    <nav class="main-navbar">
+        <!-- Official Logo Representation -->
+        <a href="#" class="logo-area">
+            <div class="jgi-badge">JGi</div>
+            <div class="jain-brand">
+                <span class="title">JAIN</span>
+                <span class="subtitle">DEEMED-TO-BE UNIVERSITY</span>
+            </div>
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="#">&#8962;</a></li>
+            <li><a href="#">ABOUT US &#9662;</a></li>
+            <li><a href="#">ADMISSIONS &#9662;</a></li>
+            <li><a href="#">ACADEMICS &#9662;</a></li>
+            <li class="active"><a href="#">PROGRAMS &#9662;</a></li>
+            <li><a href="#">RESEARCH</a></li>
+            <li><a href="#">PLACEMENTS</a></li>
+            <li><a href="#">CONTACT US &#9662;</a></li>
+            <li><div class="search-icon">&#128269;</div></li>
+        </ul>
+    </nav>
+
+    <!-- 3. Main Center Content Container over Campus Background Image -->
+    <main class="main-wrapper">
+        <section class="content-card">
+            
+            <!-- Requirement 3: College Name and Address (Prominent Heading) -->
+            <div class="card-header">
+                <h1 class="college-title">JAIN (Deemed-to-be University)</h1>
+                <p class="college-address">Kanakapura Main Road, Bengaluru, Karnataka, India</p>
+            </div>
+
+            <!-- Card Body: Programs Banner & Course List -->
+            <div class="card-body">
+                <div class="programs-header">
+                    <h2 class="programs-tag">Programs</h2>
+                    <p class="programs-description">
+                        Our programs offer students a platform for academic excellence with subjects that are 
+                        constructed to provide equal emphasis on theoretical and practical exposure.
+                    </p>
+                    <div class="breadcrumb">
+                        <span>Home</span> / Programs
+                    </div>
+                </div>
+
+                <hr class="section-separator">
+
+                <!-- Requirement 4: Courses Offered (with specific color, font-style, and font-family) -->
+                <div class="courses-container">
+                    <ul class="courses-list">
+                        <li class="course-item course-btech">B.Tech – Bachelor of Technology</li>
+                        <li class="course-item course-bba">BBA – Bachelor of Business Administration</li>
+                        <li class="course-item course-bca">BCA – Bachelor of Computer Applications</li>
+                        <li class="course-item course-mba">MBA – Master of Business Administration</li>
+                        <li class="course-item course-mca">MCA – Master of Computer Applications</li>
+                        <li class="course-item course-bcom">B.Com – Bachelor of Commerce</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- 4. Bottom Action Bar with Orange Buttons (Matching Official Website) -->
+    <div class="bottom-action-bar">
+        <a href="#" class="action-btn">&#127891; Apply UG</a>
+        <a href="#" class="action-btn">&#127891; Apply PG</a>
+        <a href="#" class="action-btn">&#127891; Apply MBA</a>
+        <a href="#" class="action-btn">&#127891; Apply B.Tech</a>
+        <a href="#" class="action-btn">&#8599; Enquire Now</a>
+    </div>
+
+    <!-- Requirement 5: Scrolling Announcement using HTML <marquee> Tag -->
+    <div class="marquee-bar">
+        <marquee behavior="scroll" direction="left" scrollamount="6">
+            NOTICE: Upcoming Semester Examinations and University Events – Stay Updated with Official Notifications!
+        </marquee>
+    </div>
+
+</body>
+</html>
