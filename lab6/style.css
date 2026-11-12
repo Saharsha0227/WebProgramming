@@ -1,0 +1,280 @@
+/* ========================================================
+   KATHMANDU TRAVEL DESTINATION WEBPAGE STYLESHEET
+   Course: HTML Lab 6 Practical
+   Author: Travel Guide Project
+   ======================================================== */
+
+/* --------------------------------------------------------
+   1. GLOBAL RESET & BASE STYLES
+   -------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #2c2c2c;
+
+    /* Background image of Kathmandu Valley with required CSS properties */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                      url('images/kathmandu-valley.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #3b1414; /* Fallback warm dark red color */
+
+    padding: 20px 10px;
+}
+
+/* --------------------------------------------------------
+   2. MAIN CONTAINER
+   -------------------------------------------------------- */
+.page-container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------
+   3. MAIN HEADER & HEADINGS
+   -------------------------------------------------------- */
+.main-header {
+    text-align: center;
+    padding: 35px 20px;
+    margin-bottom: 25px;
+    background-color: rgba(128, 0, 0, 0.88); /* Deep Crimson / Dark Red */
+    border: 3px solid #f1c40f; /* Golden yellow decorative border */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.main-title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff; /* Crisp white text color */
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9), 0 0 15px rgba(241, 196, 15, 0.7); /* Golden/Dark text shadow */
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: #f7d794; /* Warm golden text color */
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* --------------------------------------------------------
+   4. CONTENT BOXES (Reusable Card Section)
+   -------------------------------------------------------- */
+.content-box {
+    background-color: rgba(255, 255, 255, 0.94); /* Light semi-transparent background */
+    border: 2px solid #800000; /* Dark red border */
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+}
+
+/* Center-aligned Section Titles with decorative bottom borders */
+.section-title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.8rem;
+    color: #800000; /* Dark red heading color */
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f1c40f; /* Golden yellow accent line */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------------
+   5. INTRODUCTION SECTION
+   -------------------------------------------------------- */
+.intro-text {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #333333;
+    text-align: justify;
+    padding: 10px;
+    background-color: rgba(254, 249, 231, 0.6); /* Subtle cream background */
+    border-left: 5px solid #800000; /* Decorative left border accent */
+    border-radius: 4px;
+}
+
+/* --------------------------------------------------------
+   6. FAMOUS ATTRACTIONS (Grid & Hover Effects)
+   -------------------------------------------------------- */
+.places-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.place-card {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #ffffff;
+    border: 2px solid #c0392b; /* Vibrant red border */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    /* Smooth transition for hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* CSS Only Hover Effect on Attraction Cards */
+.place-card:hover {
+    transform: translateY(-6px);
+    background-color: #fff9f0; /* Gentle golden-cream highlight on hover */
+    border-color: #f39c12; /* Golden border on hover */
+    box-shadow: 0 8px 18px rgba(128, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.place-name {
+    font-size: 1.3rem;
+    color: #800000; /* Dark red heading for attraction */
+    margin-bottom: 8px;
+    border-bottom: 1px dashed #d68910;
+    padding-bottom: 5px;
+}
+
+.place-photo {
+    margin: -20px -20px 16px;
+    overflow: hidden;
+    border-radius: 6px 6px 0 0;
+    background-color: #f7f1e5;
+}
+
+.place-photo img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.place-photo figcaption {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #555555;
+}
+
+.place-photo a {
+    color: #6b1f1f;
+}
+
+.place-desc {
+    font-size: 1rem;
+    color: #4a4a4a;
+    line-height: 1.5;
+}
+
+/* --------------------------------------------------------
+   7. CULTURE AND LOCAL FOOD
+   -------------------------------------------------------- */
+.experience-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.experience-card {
+    flex: 1 1 calc(50% - 20px);
+    background-color: #ffffff;
+    border: 2px solid #d4ac0d; /* Golden yellow border */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sub-heading {
+    font-size: 1.3rem;
+    color: #922b21; /* Rich maroon heading */
+    margin-bottom: 12px;
+    border-bottom: 2px solid #800000;
+    padding-bottom: 4px;
+}
+
+.custom-list {
+    list-style-type: square;
+    padding-left: 22px;
+}
+
+.custom-list li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333333;
+}
+
+/* --------------------------------------------------------
+   8. BEST TIME TO VISIT
+   -------------------------------------------------------- */
+.time-card {
+    background-color: #eafaf1; /* Soft peaceful green tint representing fresh weather */
+    border: 2px solid #27ae60; /* Fresh emerald border */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.time-text {
+    font-size: 1.12rem;
+    font-weight: 500;
+    color: #1e4620;
+    line-height: 1.7;
+}
+
+/* --------------------------------------------------------
+   9. FOOTER SECTION
+   -------------------------------------------------------- */
+.main-footer {
+    text-align: center;
+    padding: 25px 20px;
+    background-color: rgba(128, 0, 0, 0.92); /* Dark red background */
+    border: 3px solid #f1c40f; /* Golden yellow border */
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.footer-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 600;
+    color: #f7d794; /* Golden yellow text */
+    margin-bottom: 8px;
+}
+
+.footer-copyright {
+    font-size: 0.95rem;
+    color: #ffffff; /* White text */
+    letter-spacing: 1px;
+}
+
+.footer-copyright a {
+    color: #f7d794;
+}
+
+/* --------------------------------------------------------
+   10. RESPONSIVE DESIGN (FOR SMALL SCREENS & MOBILE)
+   -------------------------------------------------------- */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.8rem;
+    }
+
+    .place-card,
+    .experience-card {
+        flex: 1 1 100%; /* Single column on mobile devices */
+    }
+
+    .content-box {
+        padding: 18px;
+    }
+}
