@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body with Chelsea Logo Background */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #222;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.92),
+            rgba(255, 255, 255, 0.92)
+        ),
+        url("download.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 500px;
+    background-attachment: fixed;
+}
+
+
+/* Header */
+
+header {
+    background-color: #010a14;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-style: italic;
+}
+
+
+/* Navigation */
+
+nav {
+    background-color: #001f5b;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: rgb(246, 242, 242);
+    text-decoration: none;
+    margin: 20px;
+    font-size: 17px;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+
+/* Product Section */
+
+.product {
+    max-width: 1000px;
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.95);
+
+    display: flex;
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+    gap: 40px;
+}
+
+
+/* Product Image */
+
+.image-section {
+    width: 50%;
+}
+
+.image-section img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* Product Details */
+
+.product-details {
+    width: 50%;
+}
+
+.product-details h2 {
+    color: #5578a0;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+
+/* Tagline */
+
+.tagline {
+    color: #034694;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+/* Description */
+
+.description {
+    line-height: 1.7;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+/* Price */
+
+.product-details h3 {
+    color: #008000;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+
+/* Offer */
+
+.offer {
+    background-color: #fff3cd;
+    color: #d35400;
+    padding: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+/* Sizes */
+
+.sizes h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.sizes button {
+    padding: 10px 15px;
+    margin-right: 8px;
+
+    border: 2px solid #034694;
+
+    background-color: white;
+
+    color: #034694;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.sizes button:hover {
+    background-color: #034694;
+    color: white;
+}
+
+
+/* Buy Button */
+
+.buy-btn {
+    margin-top: 25px;
+
+    padding: 15px 40px;
+
+    background-color: #034694;
+
+    color: white;
+
+    border: none;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+}
+
+.buy-btn:hover {
+    background-color: #001f5b;
+}
+
+
+/* Features */
+
+.features {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    text-align: center;
+
+    margin: 40px 20px;
+}
+
+.features div {
+    background-color: rgba(255, 255, 255, 0.95);
+
+    padding: 25px;
+
+    width: 250px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.features h3 {
+    color: #02162d;
+    margin-bottom: 10px;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #010610;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 40px;
+}
+
+
+/* Responsive Design */
+
+@media(max-width: 768px) {
+
+    .product {
+        flex-direction: column;
+    }
+
+    .image-section,
+    .product-details {
+        width: 100%;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    body {
+        background-size: 300px;
+    }
+}
