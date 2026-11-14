@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information System - Lab 9</title>
+    <!-- External CSS link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="main-heading">STUDENT INFORMATION SYSTEM</h1>
+            <p class="subtitle">Read and Display Student Records from an XML File</p>
+        </header>
+
+        <!-- Control Action Section -->
+        <section class="controls">
+            <button id="loadBtn" class="btn-primary" type="button">LOAD STUDENT DATA</button>
+        </section>
+
+        <!-- Status & Notification Message Section -->
+        <div id="statusMessage" class="status-message" aria-live="polite"></div>
+
+        <!-- Table Display Section (Responsive Wrapper) -->
+        <div id="tableWrapper" class="table-wrapper hidden">
+            <table class="student-table" id="studentTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Course</th>
+                        <th>Email</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody">
+                    <!-- Dynamic rows will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+

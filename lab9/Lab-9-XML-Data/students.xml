@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <id>101</id>
+        <name>Rahul Sharma</name>
+        <gender>Male</gender>
+        <course>B.Tech CSE</course>
+        <email>rahul@gmail.com</email>
+        <city>Bengaluru</city>
+    </student>
+
+    <student>
+        <id>102</id>
+        <name>Priya Singh</name>
+        <gender>Female</gender>
+        <course>BCA</course>
+        <email>priya@gmail.com</email>
+        <city>Delhi</city>
+    </student>
+
+    <student>
+        <id>103</id>
+        <name>Amit Kumar</name>
+        <gender>Male</gender>
+        <course>MCA</course>
+        <email>amit@gmail.com</email>
+        <city>Mumbai</city>
+    </student>
+
+    <student>
+        <id>104</id>
+        <name>Anjali Verma</name>
+        <gender>Female</gender>
+        <course>BBA</course>
+        <email>anjali@gmail.com</email>
+        <city>Pune</city>
+    </student>
+
+    <student>
+        <id>105</id>
+        <name>Arjun Patel</name>
+        <gender>Male</gender>
+        <course>B.Tech AIML</course>
+        <email>arjun@gmail.com</email>
+        <city>Ahmedabad</city>
+    </student>
+</students>
+

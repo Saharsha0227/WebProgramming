@@ -1,0 +1,205 @@
+/* ========================================================
+   CSS Stylesheet for Student Information System (Lab 9)
+   Pure CSS3 - Modern, Clean, and Responsive
+   ======================================================== */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e3edff 0%, #ede9fe 50%, #f3f4f6 100%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    color: #333333;
+}
+
+/* Card Container */
+.container {
+    background-color: #ffffff;
+    max-width: 950px;
+    width: 100%;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.main-heading {
+    color: #3b28cc; /* Elegant Royal Purple/Blue */
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #64748b;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Action Controls */
+.controls {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+    color: #ffffff;
+    border: none;
+    padding: 13px 32px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+    transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #4338ca 0%, #2563eb 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(79, 70, 229, 0.45);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+
+/* Status Messages */
+.status-message {
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    display: none; /* hidden until triggered */
+}
+
+.status-message.info {
+    display: block;
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+}
+
+.status-message.success {
+    display: block;
+    background-color: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+.status-message.error {
+    display: block;
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+/* Table Responsive Wrapper */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Table Styling */
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+/* Table Header */
+.student-table thead tr {
+    background: linear-gradient(135deg, #3730a3 0%, #4338ca 100%);
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.75px;
+}
+
+.student-table th {
+    padding: 14px 18px;
+    font-weight: 600;
+    border-bottom: 2px solid #312e81;
+}
+
+/* Table Body */
+.student-table td {
+    padding: 13px 18px;
+    color: #334155;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Alternating Row Colors */
+.student-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Row Hover Effect */
+.student-table tbody tr:hover {
+    background-color: #eef2ff;
+    transition: background-color 0.15s ease-in-out;
+}
+
+/* Center ID & Gender for better visual balance */
+.student-table th:first-child,
+.student-table td:first-child,
+.student-table th:nth-child(3),
+.student-table td:nth-child(3) {
+    text-align: center;
+}
+
+/* Responsive Design for Small Screens */
+@media screen and (max-width: 650px) {
+    .container {
+        padding: 22px 16px;
+    }
+
+    .main-heading {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    .student-table th,
+    .student-table td {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+}
+
