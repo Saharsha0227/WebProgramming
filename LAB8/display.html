@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Browser Title -->
+    <title>Lab 8 – User Information Form</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Container Card -->
+    <div class="container">
+        
+        <!-- Success Header -->
+        <header class="display-header">
+            <h1 class="success-title">REGISTRATION SUCCESSFUL!</h1>
+            <p class="subtitle">Your information has been submitted successfully.</p>
+        </header>
+
+        <!-- Message shown if no user information is stored -->
+        <div id="noDataMessage" class="alert-box" style="display: none;">
+            <p>No user information found. Please register first using the registration form.</p>
+        </div>
+
+        <!-- Table Container -->
+        <div id="tableContainer">
+            <table class="info-table" id="userTable">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>User Information</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Full Name</td>
+                        <td id="displayName">-</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td id="displayGender">-</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile Number</td>
+                        <td id="displayMobile">-</td>
+                    </tr>
+                    <tr>
+                        <td>Email Address</td>
+                        <td id="displayEmail">-</td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td id="displayCity">-</td>
+                    </tr>
+                    <tr>
+                        <td>State</td>
+                        <td id="displayState">-</td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td id="displayCountry">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+            <button type="button" id="backBtn" class="btn btn-primary">BACK TO FORM</button>
+            <button type="button" id="clearBtn" class="btn btn-danger">CLEAR INFORMATION</button>
+        </div>
+
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+

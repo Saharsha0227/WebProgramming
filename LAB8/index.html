@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Browser Title -->
+    <title>Lab 8 – User Information Form</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Container Card -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="form-header">
+            <h1>USER INFORMATION REGISTRATION SYSTEM</h1>
+            <p class="subtitle">Please fill in your personal information to complete registration.</p>
+        </header>
+
+        <!-- Registration Form -->
+        <form id="registrationForm" novalidate>
+            
+            <!-- SECTION A: Personal Information -->
+            <fieldset class="form-section">
+                <legend>Personal Information</legend>
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName">Enter Your Full Name <span class="required">*</span></label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    <small class="error-message" id="nameError"></small>
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <label>Select Your Gender <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="Male"> Male
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="Female"> Female
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="Other"> Other
+                        </label>
+                    </div>
+                    <small class="error-message" id="genderError"></small>
+                </div>
+            </fieldset>
+
+            <!-- SECTION B: Contact Information -->
+            <fieldset class="form-section">
+                <legend>Contact Information</legend>
+
+                <!-- Mobile Number -->
+                <div class="form-group">
+                    <label for="mobile">Enter Mobile Number <span class="required">*</span></label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" maxlength="10" required>
+                    <small class="error-message" id="mobileError"></small>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="email">Enter Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                    <small class="error-message" id="emailError"></small>
+                </div>
+            </fieldset>
+
+            <!-- SECTION C: Location Information -->
+            <fieldset class="form-section">
+                <legend>Location Information</legend>
+
+                <!-- City -->
+                <div class="form-group">
+                    <label for="city">City <span class="required">*</span></label>
+                    <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                    <small class="error-message" id="cityError"></small>
+                </div>
+
+                <!-- State -->
+                <div class="form-group">
+                    <label for="state">State <span class="required">*</span></label>
+                    <input type="text" id="state" name="state" placeholder="Enter your state" required>
+                    <small class="error-message" id="stateError"></small>
+                </div>
+
+                <!-- Country -->
+                <div class="form-group">
+                    <label for="country">Country <span class="required">*</span></label>
+                    <select id="country" name="country" required>
+                        <option value="">-- Select Country --</option>
+                        <option value="India">India</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="United States">United States</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <small class="error-message" id="countryError"></small>
+                </div>
+            </fieldset>
+
+            <!-- SECTION D: Form Buttons -->
+            <div class="button-group">
+                <button type="submit" id="submitBtn" class="btn btn-submit">SUBMIT</button>
+                <button type="reset" id="resetBtn" class="btn btn-reset">RESET</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
