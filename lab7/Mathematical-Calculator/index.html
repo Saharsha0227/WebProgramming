@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7 – Mathematical Calculator</title>
+    <!-- External CSS link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Container Card -->
+    <div class="calculator-card">
+        
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="main-title">MATHEMATICAL CALCULATOR</h1>
+            <p class="subtitle">Perform Basic Mathematical Operations</p>
+        </header>
+
+        <!-- Calculator Form -->
+        <form id="calculatorForm" class="calculator-form" onsubmit="return false;">
+            
+            <!-- First Number Input -->
+            <div class="input-group">
+                <label for="firstNumber">Enter First Number</label>
+                <input 
+                    type="number" 
+                    id="firstNumber" 
+                    step="any" 
+                    placeholder="e.g. 20" 
+                    required 
+                    autocomplete="off"
+                >
+            </div>
+
+            <!-- Second Number Input -->
+            <div class="input-group">
+                <label for="secondNumber">Enter Second Number</label>
+                <input 
+                    type="number" 
+                    id="secondNumber" 
+                    step="any" 
+                    placeholder="e.g. 10" 
+                    required 
+                    autocomplete="off"
+                >
+            </div>
+
+            <!-- Operation Buttons (4 distinct colors) -->
+            <div class="buttons-grid">
+                <button type="button" id="btnAdd" class="btn btn-add">ADD (+)</button>
+                <button type="button" id="btnSubtract" class="btn btn-sub">SUBTRACT (-)</button>
+                <button type="button" id="btnMultiply" class="btn btn-mul">MULTIPLY (×)</button>
+                <button type="button" id="btnDivide" class="btn btn-div">DIVIDE (÷)</button>
+            </div>
+
+            <!-- Reset / Clear Button -->
+            <div class="reset-wrapper">
+                <button type="button" id="btnReset" class="btn btn-reset">Clear All</button>
+            </div>
+
+        </form>
+
+        <!-- Result Display Section -->
+        <div id="resultBox" class="result-box hidden">
+            <h2 class="result-heading">Calculation Summary</h2>
+            
+            <div class="result-details">
+                <div class="result-row">
+                    <span class="detail-label">First Number:</span>
+                    <span id="resFirstNumber" class="detail-value">0</span>
+                </div>
+                <div class="result-row">
+                    <span class="detail-label">Second Number:</span>
+                    <span id="resSecondNumber" class="detail-value">0</span>
+                </div>
+                <div class="result-row">
+                    <span class="detail-label">Operation:</span>
+                    <span id="resOperation" class="detail-value">-</span>
+                </div>
+            </div>
+
+            <!-- Visually Highlighted Final Result Box -->
+            <div class="highlight-result">
+                <span class="highlight-label">Result:</span>
+                <span id="finalResult" class="highlight-value">0</span>
+            </div>
+        </div>
+
+        <!-- Error Message Display Section -->
+        <div id="errorBox" class="error-box hidden">
+            <span class="error-icon">⚠️</span>
+            <span id="errorMessage" class="error-text"></span>
+        </div>
+
+    </div>
+
+    <!-- External JavaScript link -->
+    <script src="script.js"></script>
+</body>
+</html>
+
